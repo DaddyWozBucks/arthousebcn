@@ -1,0 +1,21 @@
+
+<div class="aboutbg">
+  <div class="container">
+    <div class="container">
+      <h1 class="text-center">ArtHouseBCN</h1>
+      <p class="text-center">
+        Barcelona has always been home to artist, famous and not. The ecclectic nature of the city combined with the deep artistic heritage and confluence of international creativity lead to an emarrasment of riches when it comes to art. </br>
+        </br>
+         ArtHouseBCN exists to bridge the gap between these pieces and you the admirer. So please feel free to browse around!  
+      </p>
+      <button ui-sref="app.login" class="btn btn-assertive">Join Us!</button>
+    </div>
+    <div class="container">
+      <div id="latest">
+        <div ng-repeat="piece in latestPieces" class="col-xs-12 col-md-3">
+          <image src="{{piece.images[0]}}" class="img-responsive">   </image>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

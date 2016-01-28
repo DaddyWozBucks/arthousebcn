@@ -1,0 +1,25 @@
+div.modal-header.modal_style(ng-click="close()")
+    h1.post_title.text-center Kilroy's Faves
+    //- image.modal_img.img-responsive(src="assets/images/kilroy.jpg")
+div.modal-body.modal_style
+    form.form-horizontal(role="form")
+      div.form-group
+        label.col-sm-2 Email
+        div.col-sm-10
+          input.form-control( ng-model="newUser.email" type="email", placeholder="Contact Email" )
+    div.form-group
+        label.col-sm-2 User Name
+        div.col-sm-10
+          input.form-control( ng-model="newUser.name" type="text", placeholder="User Name (if different)" )
+      div.form-group
+        label.col-sm-2 Password
+        div.col-sm-10
+          input.form-control(ng-model="newUser.password", type="text", placeholder="Password")
+    
+div.modal-footer.modal_style
+  div.modal_options(ng-click="createUser()")
+    h3.text-center Create!
+  div.modal_options(ng-click="close()")
+    h3.text-center Cancel
+
+  

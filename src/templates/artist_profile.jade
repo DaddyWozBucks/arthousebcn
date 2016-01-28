@@ -1,0 +1,10 @@
+div.container-fluid
+  div.profileheader.col-xs-12
+    div.col-xs-12.col-sm-6.col-md-4
+      div#profile 
+        div#profile_text
+          h3.text-center {{user.name}}
+    div.artist.col-xs-12.col-md-8
+      span(ui-sref="app.artist")
+        h3.text-right Are you an Artist? Click Here to sign up!
+        button.btn-btn-default(ng-click="createUser()") Create User

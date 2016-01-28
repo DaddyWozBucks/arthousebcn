@@ -1,0 +1,26 @@
+
+<div ng-click="close()" class="modal-header modal_style">
+  <h1 class="post_title text-center">New Gallery</h1>
+</div>
+<div class="modal-body modal_style"></div>
+<div id="creategal" class="col-lg-sm col-sm-offset-1">
+  <h3 class="text-center">Create Gallery</h3>
+  <form>
+    <div class="form-group">
+      <label for="galleryTitle">Gallery Title</label>
+      <input ng-model="newGal.title" placeholder="Title" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="galleryDescription">Gallery Description</label>
+      <input ng-model="newGal.description" placeholder="Description" class="form-control"/>
+    </div>
+  </form>
+</div>
+<div class="modal-footer modal_style">
+  <div ng-click="createGal()" class="modal_options">
+    <h3 class="text-center">Create!</h3>
+  </div>
+  <div ng-click="close()" class="modal_options">
+    <h3 class="text-center">Cancel</h3>
+  </div>
+</div>

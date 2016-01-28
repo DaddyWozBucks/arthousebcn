@@ -1,0 +1,32 @@
+
+<div class="profileheader container-fluid">
+  <div class="col-xs-12"> 
+    <div id="profile" class="col-xs-12 col-sm-5 col-md-4"> 
+      <image src="{{user.image}}" class="img-responsive img-circle"></image>
+    </div>
+    <div class="col-xs-12 col-sm-7 col-md-7">
+      <div class="user-info col-xs-12 col-sm-6">
+        <h2 class="pm text-center">{{user.name}}  </h2>
+      </div>
+      <div ng-show="user.artist" class="artist col-xs-12 col-sm-6">
+        <h2 class="text-center">{{artist.name}}</h2>
+        <p class="text-center">{{artist.bio}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <ul role="tablist" class="nav nav-pills nav-justified">
+    <li ui-sref="app.dashboard.feed">
+      <div class="text-center pm">Feed</div>
+    </li>
+    <li ui-sref="app.dashboard.favourites">
+      <div class="text-center pm">Favourites</div>
+    </li>
+    <li ui-sref="app.dashboard.manage">
+      <div class="text-center pm">Manage my Art</div>
+    </li>
+  </ul>
+</div>
+<div ui-view="dashboard" class="container-fluid">
+</div>

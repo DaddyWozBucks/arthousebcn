@@ -1,0 +1,39 @@
+div.profileheader.container-fluid
+  div.col-xs-12  
+    div.col-xs-12.col-sm-5.col-md-4#profile 
+      image.img-responsive.img-circle(src="{{user.image}}")
+    div.col-xs-12.col-sm-7.col-md-7
+      div.user-info.col-xs-12.col-sm-6
+        h2.pm.text-center {{user.name}}  
+      div.artist.col-xs-12.col-sm-6(ng-show="user.artist")
+        h2.text-center {{artist.name}}
+        p.text-center {{artist.bio}}
+div.container-fluid
+  ul.nav.nav-pills.nav-justified(role="tablist")
+    li(ui-sref="app.dashboard.feed")
+      div.text-center.pm Feed
+    li(ui-sref="app.dashboard.favourites")
+      div.text-center.pm Favourites
+    li(ui-sref="app.dashboard.manage")
+      div.text-center.pm Manage my Art
+div.container-fluid(ui-view="dashboard")
+
+  //- div.container-fluid
+  //-   div.container.tile_box#latest
+  //-     div.tile(ng-repeat="latest in pieces| orderBy: 'created_at'")
+  //-       image.tile_img.img-responsive(src="{{latest.images[0]}}")
+  //-       div.tile_text
+  //-         h3.text-center {{latest.title}}
+  //-         h5.text-left {{latest.artist}
+  //-   div.container.tile_box#recommended
+  //-     div.tile(ng-repeat="rec in pieces")
+  //-       image.tile_img.img-responsive(src="{{rec.images[0]}}")
+  //-       div.tile_text
+  //-         h3.text-center {{rec.title}}
+  //-         h5.text-left {{rec.artist}
+  //-   div.container.tile_box#sale
+  //-     div.tile(ng-repeat="sale in pieces")
+  //-       image.tile_img.img-responsive(src="{{sale.images[0]}}")
+  //-       div.tile_text
+  //-         h3.text-center {{sale.title}}
+  //-         h5.text-left {{sale.artist}

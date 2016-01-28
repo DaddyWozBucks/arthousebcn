@@ -1,0 +1,14 @@
+div.aboutbg
+  div.container
+    div.container
+      h1.text-center ArtHouseBCN
+      p.text-center.
+       Barcelona has always been home to artist, famous and not. The ecclectic nature of the city combined with the deep artistic heritage and confluence of international creativity lead to an emarrasment of riches when it comes to art. </br>
+       </br>
+        ArtHouseBCN exists to bridge the gap between these pieces and you the admirer. So please feel free to browse around!  
+      button.btn.btn-assertive(ui-sref="app.login") Join Us!
+    div.container
+      div#latest
+        div.col-xs-12.col-md-3(ng-repeat="piece in latestPieces")
+          image.img-responsive(src="{{piece.images[0]}}")    
+  

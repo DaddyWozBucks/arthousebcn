@@ -1,0 +1,24 @@
+.container-fluid
+  div#art_filter_box
+    form.form-inline(role="form")
+      div.form-group
+        label.sr-only(for="exampleInputEmail2") Filter by Artist
+        input.form-control(type="text" ng-model="search.artist" id="exampleInputEmail2" placeholder="Artist")
+      div.form-group
+        label.sr-only(for="tags") Filter by Tags
+        input.form-control(type="text" ng-model="search.tags" id="tags" placeholder="Tags" ng-list=", " required)
+      div.form-group
+        label.sr-only(for="gallery") Filter by Gallery
+        input.form-control(type="text" ng-model="search.gallery" id="gallery" placeholder="Gallery")
+      div.form-group
+        label.sr-only(for="location") Filter by Location
+        input.form-control(type="text" ng-model="search.location" id="location" placeholder="Location")
+      div.form-group
+        label.sr-only(for="keyword") Keyword Search
+        input.form-control(type="text" ng-model="search.$" id="keyword" placeholder="Any")
+  div#art_results.container-fluid
+    div.art_tile.col-lg-3.col-md-4.col-xs-12(ng-repeat="art in artArray | filter:search:strict", ui-sref="app.piece({pieceId: art.id })")
+      image.img-thumbnail(src="{{art.images[0]}}")
+      h5.text-center {{art.title}}
+      p.lead.text-center {{art.location}}
+      p.text-center {{art.description}}

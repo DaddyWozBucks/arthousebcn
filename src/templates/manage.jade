@@ -1,0 +1,31 @@
+div.management_console
+  div.text-center.pm {{user.name}}
+div.galleries
+  div.col-xs-12.col-lg-10.col-lg-offset-1  
+    ul.list.-list-group
+      li.list-group-item(ng-repeat="gallery in userGalleries")
+        div.text-center.qs {{gallery.title}}
+  div.container
+    div#creategal.col-xs-12.col-lg-10.col-lg-offset-1
+      h3.text-center(ng-click="openGal()") Create Gallery
+      //- form
+      //-   div.form-group
+      //-     label(for="galleryTitle") Gallery Title
+      //-     input.form-control(ng-model="newGal.title", placeholder="Title")
+      //-   div.form-group
+      //-     label(for="galleryDescription") Gallery Description
+      //-     input.form-control(ng-model="newGal.description",  placeholder="Description")
+      div.fileupload
+        h3.text-center.pm Upload Images
+        div.button(ngf-select="uploadFiles($files)", multiple="multiple") Upload on file select
+        p.text-center Drop File:
+        div.drop-box(ngf-drop="uploadFiles($files)", ngf-drag-over-class="'dragover'", ngf-multiple="true", ngf-pattern="'image/*,application/pdf'")
+        p.text-center Drop Images or PDFs files here
+        div(ngf-no-file-drop) File Drag/Drop is not supported for this browser
+        div
+          p.text-center Image thumbnail: 
+          image(ngf-thumbnail="file || '/thumb.jpg'")
+          p.text-center Audio preview: 
+          audio(controls ngf-src="file")
+          p.text-center Video preview: 
+          video(controls ngf-src="file")

@@ -1,0 +1,34 @@
+
+<div class="management_console">
+  <div class="text-center pm">{{user.name}}</div>
+</div>
+<div class="galleries">
+  <div class="col-xs-12 col-lg-10 col-lg-offset-1"> 
+    <ul class="list -list-group">
+      <li ng-repeat="gallery in userGalleries" class="list-group-item">
+        <div class="text-center qs">{{gallery.title}}</div>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div id="creategal" class="col-xs-12 col-lg-10 col-lg-offset-1">
+      <h3 ng-click="openGal()" class="text-center">Create Gallery</h3>
+      <div class="fileupload">
+        <h3 class="text-center pm">Upload Images</h3>
+        <div ngf-select="uploadFiles($files)" multiple="multiple" class="button">Upload on file select</div>
+        <p class="text-center">Drop File:</p>
+        <div ngf-drop="uploadFiles($files)" ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-pattern="'image/*,application/pdf'" class="drop-box"></div>
+        <p class="text-center">Drop Images or PDFs files here</p>
+        <div ngf-no-file-drop="ngf-no-file-drop">File Drag/Drop is not supported for this browser</div>
+        <div>
+          <p class="text-center">Image thumbnail: </p>
+          <image ngf-thumbnail="file || '/thumb.jpg'"></image>
+          <p class="text-center">Audio preview: </p>
+          <audio controls="controls" ngf-src="file"></audio>
+          <p class="text-center">Video preview: </p>
+          <video controls="controls" ngf-src="file"></video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

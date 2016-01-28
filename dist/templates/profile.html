@@ -1,0 +1,47 @@
+
+<div class="container-fluid">
+  <div class="profileheader col-xs-12">
+    <div id="profile" class="col-xs-12 col-sm-6 col-md-4"> 
+      <div id="profile_text"></div>
+    </div>
+    <div class="col-xs-12 col-md-8">
+      <div class="user-info">
+        <h2 class="text-center">{{user.name}}  </h2>
+      </div>
+    </div>
+    <div class="artist col-xs-12 col-md-8">
+      <div><span ui-sref="app.artist">
+          <h3 class="text-right">Are you an Artist? Click Here to sign up!</h3>
+          <button ng-click="createUser()" class="btn-btn-default">Create User</button></span></div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div id="latest" class="container tile_box">
+      <div ng-repeat="latest in pieces| orderBy: 'created_at'" class="tile">
+        <image src="{{latest.images[0]}}" class="tile_img img-responsive"></image>
+        <div class="tile_text">
+          <h3 class="text-center">{{latest.title}}</h3>
+          <h5 class="text-left">{{latest.artist}</h5>
+        </div>
+      </div>
+    </div>
+    <div id="recommended" class="container tile_box">
+      <div ng-repeat="rec in pieces" class="tile">
+        <image src="{{rec.images[0]}}" class="tile_img img-responsive"></image>
+        <div class="tile_text">
+          <h3 class="text-center">{{rec.title}}</h3>
+          <h5 class="text-left">{{rec.artist}</h5>
+        </div>
+      </div>
+    </div>
+    <div id="sale" class="container tile_box">
+      <div ng-repeat="sale in pieces" class="tile">
+        <image src="{{sale.images[0]}}" class="tile_img img-responsive"></image>
+        <div class="tile_text">
+          <h3 class="text-center">{{sale.title}}</h3>
+          <h5 class="text-left">{{sale.artist}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

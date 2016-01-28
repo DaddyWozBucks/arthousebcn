@@ -1,0 +1,33 @@
+div.container-fluid
+  div.profileheader.col-xs-12
+    div.col-xs-12.col-sm-6.col-md-4#profile 
+      div#profile_text
+    .col-xs-12.col-md-8
+      div.user-info
+        h2.text-center {{user.name}}  
+    div.artist.col-xs-12.col-md-8
+      div()
+        span(ui-sref="app.artist")
+          h3.text-right Are you an Artist? Click Here to sign up!
+          button.btn-btn-default(ng-click="createUser()") Create User
+
+  
+  div.container-fluid
+    div.container.tile_box#latest
+      div.tile(ng-repeat="latest in pieces| orderBy: 'created_at'")
+        image.tile_img.img-responsive(src="{{latest.images[0]}}")
+        div.tile_text
+          h3.text-center {{latest.title}}
+          h5.text-left {{latest.artist}
+    div.container.tile_box#recommended
+      div.tile(ng-repeat="rec in pieces")
+        image.tile_img.img-responsive(src="{{rec.images[0]}}")
+        div.tile_text
+          h3.text-center {{rec.title}}
+          h5.text-left {{rec.artist}
+    div.container.tile_box#sale
+      div.tile(ng-repeat="sale in pieces")
+        image.tile_img.img-responsive(src="{{sale.images[0]}}")
+        div.tile_text
+          h3.text-center {{sale.title}}
+          h5.text-left {{sale.artist}

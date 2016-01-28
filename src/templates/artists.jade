@@ -1,0 +1,40 @@
+div.arthouse.title
+  div.col-xs-12
+    h1.text-center.title Artists
+    h3.text-right Make awesome art? Put it here and take the effort out of selling your babies :)
+    button.btn.btn-blue(ng-click="openSignUp()")
+  //- div.col-xs-12#artist_parade  
+  //-   div.parade_item(ng-repeat="artist in artists")
+  //-     image.img-responsive(ng-src="{{artist.images[0].url}}")
+  //-     div.parade_text
+  //-       div.parade_title
+  //-         h4.text-center {{artist.name}}
+  //-       div.parade_body
+  //-         span.parade_options Likes {{artist.likes}}
+  //-         span.parade_options pieces {{artist.pieces.length}}
+.container-fluid
+  div#art_filter_box
+    form.form-inline(role="form")
+      div.form-group
+        label.sr-only(for="exampleInputEmail2") Filter by Name
+        input.form-control(type="text" ng-model="search.name" id="exampleInputEmail2" placeholder="Artist")
+      div.form-group
+        label.sr-only(for="tags") Filter by Tags
+        input.form-control(type="text" ng-model="search.tags" id="tags" placeholder="Tags" ng-list=", " required)
+      div.form-group
+        label.sr-only(for="gallery") Filter by Gallery
+        input.form-control(type="text" ng-model="search.gallery" id="gallery" placeholder="Gallery")
+      div.form-group
+        label.sr-only(for="location") Filter by Location
+        input.form-control(type="text" ng-model="search.location" id="location" placeholder="Location")
+      div.form-group
+        label.sr-only(for="keyword") Keyword Search
+        input.form-control(type="text" ng-model="search.$" id="keyword" placeholder="Any")
+  div#artist_results.container-fluid
+    div.artist_tile.col-lg-3.col-md-4.col-xs-12(ng-repeat="art in artists | filter:search:strict", ui-sref="app.artists.detail({artistId: art.id })")
+      image.img-thumbnail(src="{{art.image}}")
+      h3.text-center {{art.artist_name}}
+      p.lead.text-center {{art.location}}
+      p.text-center.
+       {{art.description}}
+        {{artist.pieces.length}}

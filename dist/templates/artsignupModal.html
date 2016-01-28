@@ -1,0 +1,55 @@
+
+<div ng-click="close()" class="modal-header modal_style">
+  <h1 class="post_title text-center">Kilroy's Faves</h1>
+</div>
+<div class="modal-body modal_style">
+  <form role="form" class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2">Email</label>
+      <div class="col-sm-10">
+        <input ng-model="newArtist.email" type="email" placeholder="Contact Email" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">Contact Number</label>
+      <div class="col-sm-10">
+        <input ng-model="newArtist.phone" type="number" placeholder="Contact Number (inlclude international codes!)" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">Artist Name</label>
+      <div class="col-sm-10">
+        <input ng-model="newArtist.artist_name" type="text" placeholder="Artist Name (if different)" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">Location:</label>
+      <div class="col-sm-10">
+        <input ng-model="newArtist.location" type="text" placeholder="Location:" class="form-control"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">Bio</label>
+      <div class="col-sm-10">
+        <textarea ng-model="newArtist.bio" rows="6" placeholder="Bio" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2">Tags</label>
+      <div class="col-sm-10">
+        <input ng-model="newArtist.tags" ng-list="ng-list" required="required" placeholder="Tag your art to help people find it easier!" class="form-control"/>
+      </div>
+      <div class="col-sm-10">
+        <h4 class="text-center">{{newArtist.tags}}      </h4>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer modal_style">
+  <div ng-click="createArtist()" class="modal_options">
+    <h3 class="text-center">Create!</h3>
+  </div>
+  <div ng-click="close()" class="modal_options">
+    <h3 class="text-center">Cancel</h3>
+  </div>
+</div>

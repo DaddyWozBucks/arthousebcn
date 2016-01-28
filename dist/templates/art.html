@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+  <div id="art_filter_box">
+    <form role="form" class="form-inline">
+      <div class="form-group">
+        <label for="exampleInputEmail2" class="sr-only">Filter by Artist</label>
+        <input type="text" ng-model="search.artist" id="exampleInputEmail2" placeholder="Artist" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="tags" class="sr-only">Filter by Tags</label>
+        <input type="text" ng-model="search.tags" id="tags" placeholder="Tags" ng-list=", " required="required" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="gallery" class="sr-only">Filter by Gallery</label>
+        <input type="text" ng-model="search.gallery" id="gallery" placeholder="Gallery" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="location" class="sr-only">Filter by Location</label>
+        <input type="text" ng-model="search.location" id="location" placeholder="Location" class="form-control"/>
+      </div>
+      <div class="form-group">
+        <label for="keyword" class="sr-only">Keyword Search</label>
+        <input type="text" ng-model="search.$" id="keyword" placeholder="Any" class="form-control"/>
+      </div>
+    </form>
+  </div>
+  <div id="art_results" class="container-fluid">
+    <div ng-repeat="art in artArray | filter:search:strict" ui-sref="app.piece({pieceId: art.id })" class="art_tile col-lg-3 col-md-4 col-xs-12">
+      <image src="{{art.images[0]}}" class="img-thumbnail"></image>
+      <h5 class="text-center">{{art.title}}</h5>
+      <p class="lead text-center">{{art.location}}</p>
+      <p class="text-center">{{art.description}}</p>
+    </div>
+  </div>
+</div>

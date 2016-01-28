@@ -1,0 +1,23 @@
+
+<nav role="navigation" class="navbar navbar-fixed-top my_nav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" data-toggle="collapse" data-target="#art_navbar" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="my_nav__item navbar-brand">ArtHouseBCN</a>
+    </div>
+    <div id="art_navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav col-xs">
+        <li><a data-toggle="collapse" data-target="#art_navbar" ui-sref="app.dashboard" class="my_nav__item">Home</a></li>
+        <li><a data-toggle="collapse" data-target="#art_navbar" ui-sref="app.art" class="my_nav__item">Art</a></li>
+        <li><a data-toggle="collapse" data-target="#art_navbar" ui-sref="app.artists" class="my_nav__item">Artists</a></li>
+        <li><a data-toggle="collapse" data-target="#art_navbar" ui-sref="app.exhibit" class="my_nav__item">Exhibitions</a></li>
+        <li><a data-toggle="collapse" data-target="#art_navbar" ui-sref="app.login" class="my_nav__item">Join</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="collapse" data-target="#art_navbar" ng-click="logout()" class="my_nav__item">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div ui-view="main"> </div>
+<div class="nav navbar-fixed-bottom footer_ui"><span class="text-left"><a h-ref="http://www.kilroydevelopment.com"> 
+      <h5 class="my_nav__item">Kilroy Development 2016</h5></a></span></div>

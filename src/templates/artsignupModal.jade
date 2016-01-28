@@ -1,0 +1,39 @@
+div.modal-header.modal_style(ng-click="close()")
+    h1.post_title.text-center Kilroy's Faves
+    //- image.modal_img.img-responsive(src="assets/images/kilroy.jpg")
+div.modal-body.modal_style
+    form.form-horizontal(role="form")
+      div.form-group
+        label.col-sm-2 Email
+        div.col-sm-10
+          input.form-control( ng-model="newArtist.email" type="email", placeholder="Contact Email" )
+      div.form-group
+        label.col-sm-2 Contact Number
+        div.col-sm-10
+          input.form-control( ng-model="newArtist.phone" type="number", placeholder="Contact Number (inlclude international codes!)" )
+      div.form-group
+        label.col-sm-2 Artist Name
+        div.col-sm-10
+          input.form-control( ng-model="newArtist.artist_name" type="text", placeholder="Artist Name (if different)" )
+      div.form-group
+        label.col-sm-2 Location:
+        div.col-sm-10
+          input.form-control( ng-model="newArtist.location" type="text", placeholder="Location:" )    
+      div.form-group
+        label.col-sm-2 Bio
+        div.col-sm-10
+          textarea.form-control(ng-model="newArtist.bio" rows="6", placeholder="Bio")
+      div.form-group
+        label.col-sm-2 Tags
+        div.col-sm-10
+          input.form-control(ng-model="newArtist.tags" ng-list required , placeholder="Tag your art to help people find it easier!" )
+        .col-sm-10
+          h4.text-center {{newArtist.tags}}      
+    
+div.modal-footer.modal_style
+  div.modal_options(ng-click="createArtist()")
+    h3.text-center Create!
+  div.modal_options(ng-click="close()")
+    h3.text-center Cancel
+
+  

@@ -1,0 +1,20 @@
+div.modal-header.modal_style(ng-click="close()")
+    h1.post_title.text-center New Gallery
+    //- image.modal_img.img-responsive(src="assets/images/kilroy.jpg")
+div.modal-body.modal_style
+div#creategal.col-lg-sm.col-sm-offset-1
+  h3.text-center Create Gallery
+  form
+    div.form-group
+      label(for="galleryTitle") Gallery Title
+      input.form-control(ng-model="newGal.title", placeholder="Title")
+    div.form-group
+      label(for="galleryDescription") Gallery Description
+      input.form-control(ng-model="newGal.description",  placeholder="Description")
+div.modal-footer.modal_style
+  div.modal_options(ng-click="createGal()")
+    h3.text-center Create!
+  div.modal_options(ng-click="close()")
+    h3.text-center Cancel
+
+  

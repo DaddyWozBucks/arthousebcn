@@ -1,0 +1,14 @@
+div.container
+  h1 input
+  h1 INOUT
+  input(ng-click="login()")
+  form.form-horizontal(role="form")
+    div.form-group
+      label.col-sm-2 Email
+      div.col-sm-10
+        input.form-control(ng-model="logindetail.email", type="email", placeholder="Email")
+    div.form-group
+      label.col-sm-2 Password
+      div.col-sm-10
+        input.form-control(ng-model="logindetail.password", type="password", placeholder="*********")
+    button.btn.btn-flat(ng-click="login()")
